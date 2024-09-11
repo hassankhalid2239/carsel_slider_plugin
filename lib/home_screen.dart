@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carsel_slider_plugin/full_screen_slider.dart';
 import 'package:carsel_slider_plugin/state_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'images.dart';
@@ -26,20 +26,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ListTile(
-            title: const Text(
-              'Auto Slider',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            trailing: IconButton(
-              onPressed: (){},
-              icon: const Icon(Icons.more_vert_rounded,color: Colors.black,),
-            ),
-          ),
+          SizedBox(height: 10,),
           Stack(
             alignment:
             Alignment.bottomCenter,
@@ -84,20 +71,24 @@ class HomeScreen extends StatelessWidget {
               })
             ],
           ),
-          SizedBox(height: 5,),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _stateController.options.length,
-              itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Obx((){
-                      return 
-                    }),
-                  );
-              },
+          Expanded(child: SizedBox()),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+            child: SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+                  backgroundColor: WidgetStatePropertyAll(Colors.redAccent)
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FullScreenSlider()));
+                },
+                child: Text('Full Screen Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
+              ),
             ),
           )
-
         ],
       ),
     );
