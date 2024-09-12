@@ -3,6 +3,7 @@ import 'package:carsel_slider_plugin/focus_slider.dart';
 import 'package:carsel_slider_plugin/full_screen_slider.dart';
 import 'package:carsel_slider_plugin/slider_screen.dart';
 import 'package:carsel_slider_plugin/state_controller.dart';
+import 'package:carsel_slider_plugin/vertical_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -141,9 +142,9 @@ class HomeScreen extends StatelessWidget {
                     backgroundColor: WidgetStatePropertyAll(Colors.redAccent)
                 ),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FocusSlider()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VerticalSlider()));
                 },
-                child: Text('Focus Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
+                child: Text('Vertical Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
               ),
             ),
           ),
