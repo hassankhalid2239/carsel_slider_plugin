@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carsel_slider_plugin/focus_slider.dart';
 import 'package:carsel_slider_plugin/full_screen_slider.dart';
+import 'package:carsel_slider_plugin/slider_screen.dart';
 import 'package:carsel_slider_plugin/state_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,6 +28,8 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height: 10,),
+          Text('Auto Slider',style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w500),),
           SizedBox(height: 10,),
           Stack(
             alignment:
@@ -71,9 +75,9 @@ class HomeScreen extends StatelessWidget {
               })
             ],
           ),
-          Expanded(child: SizedBox()),
+          SizedBox(height: 20,),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: SizedBox(
               height: 50,
               width: double.infinity,
@@ -88,7 +92,61 @@ class HomeScreen extends StatelessWidget {
                 child: Text('Full Screen Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
               ),
             ),
-          )
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+                    backgroundColor: WidgetStatePropertyAll(Colors.redAccent)
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SliderScreen()));
+                },
+                child: Text('Simple Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+                    backgroundColor: WidgetStatePropertyAll(Colors.redAccent)
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FocusSlider()));
+                },
+                child: Text('Focus Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+                    backgroundColor: WidgetStatePropertyAll(Colors.redAccent)
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FocusSlider()));
+                },
+                child: Text('Focus Slider',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18,letterSpacing: 2),),
+              ),
+            ),
+          ),
         ],
       ),
     );

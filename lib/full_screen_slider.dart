@@ -27,7 +27,7 @@ class FullScreenSlider extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(imagesUrl[_stateController.currentIndexFull.value])
+                    image: AssetImage(imagesUrl[_stateController.currentIndexFull.value])
                 )
             ),
             child: BackdropFilter(
@@ -70,7 +70,7 @@ class FullScreenSlider extends StatelessWidget {
              borderRadius: BorderRadius.circular(8)
          ),
          margin: EdgeInsets.symmetric(horizontal: 5),
-         child: Image.network(
+         child: Image.asset(
            urlImage,
          )
      );
